@@ -93,13 +93,19 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+# ALIAS
 alias ls='colorls'
+alias cat='bat'
 
+# ITERM INTEGRATION
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# REMOVE COMPUTER NAME
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
       prompt_segment black default " %(!.%{%F{yellow}%}.)$USER "
     fi
 }
-
+# STARTUP ACTIONS
+archey -p
